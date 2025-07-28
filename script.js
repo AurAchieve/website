@@ -1,7 +1,19 @@
 const cursorBubble = document.querySelector('.cursor-bubble');
 
 document.addEventListener('mousemove', (e) => {
-    // Use clientX and clientY to get the cursor position relative to the viewport
     cursorBubble.style.left = e.clientX + 'px';
     cursorBubble.style.top = e.clientY + 'px';
+});
+
+window.addEventListener('load', () => {
+    const leftDoor = document.querySelector('.door.left');
+    const rightDoor = document.querySelector('.door.right');
+    const body = document.querySelector('body');
+
+    // Add a small delay for effect
+    setTimeout(() => {
+        leftDoor.classList.add('open');
+        rightDoor.classList.add('open');
+        body.classList.add('loaded');
+    }, 500);
 });

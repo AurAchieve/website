@@ -24,6 +24,45 @@ body {
     position: relative;
 }
 
+.door {
+    position: fixed;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: #111;
+    z-index: 1001; /* Higher than cursor bubble */
+    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.door.left {
+    left: 0;
+}
+
+.door.right {
+    right: 0;
+}
+
+.door.left.open {
+    transform: translateX(-100%);
+}
+
+.door.right.open {
+    transform: translateX(100%);
+}
+
+/* Initially hide content and fade it in */
+.top-bar, .content, .background-bubbles, .cursor-bubble {
+    opacity: 0;
+    transition: opacity 1s ease-in 1s;
+}
+
+body.loaded .top-bar,
+body.loaded .content,
+body.loaded .background-bubbles,
+body.loaded .cursor-bubble {
+    opacity: 1;
+}
+
 .top-bar {
     position: fixed;
     top: 0;
@@ -64,11 +103,11 @@ p {
     margin-top: 10px;
 }
 
-/* Cursor Bubble */
+
 .cursor-bubble {
     width: 40px;
     height: 40px;
-    border: 2px solid rgba(199, 231, 158, 0.7); /* Light green */
+    border: 2px solid rgba(199, 231, 158, 0.7);
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -79,7 +118,6 @@ p {
     z-index: 999;
 }
 
-/* Background Bubbles */
 .background-bubbles {
     position: absolute;
     top: 0;
@@ -96,7 +134,7 @@ p {
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(199, 231, 158, 0.2); /* Light green with transparency */
+    background: rgba(199, 231, 158, 0.2);
     animation: animate-bubbles 25s linear infinite;
     bottom: -150px;
 }
@@ -125,16 +163,16 @@ p {
     }
 }
 
-/* Button */
+
 .button-9 {
   appearance: button;
   backface-visibility: hidden;
-  background-color: #c7e79e; /* Light Green */
+  background-color: #c7e79e;
   border-radius: 6px;
   border-width: 0;
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
   box-sizing: border-box;
-  color: #1a1a1a; /* Dark text for contrast */
+  color: #1a1a1a;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-size: 100%;
@@ -174,5 +212,8 @@ p {
     }
     p {
         font-size: 18px;
+    }
+    .cursor-bubble {
+        display: none;
     }
 }
