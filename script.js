@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
     const rightDoor = document.querySelector('.door.right');
     const body = document.querySelector('body');
 
-    // Add a small delay for effect
     setTimeout(() => {
         leftDoor.classList.add('open');
         rightDoor.classList.add('open');
