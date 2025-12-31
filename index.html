@@ -14,37 +14,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Gabarito:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
     <title>AurAchieve</title>
     <meta name="description" content="Your door to better days and a better life altogether.">
 </head>
 <body>
-    <div class="door left"></div>
-    <div class="door right"></div>
+    <!-- Background Elements -->
+    <div class="background-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        <div class="noise-overlay"></div>
+    </div>
 
     <div class="top-bar">
         <span>AurAchieve</span>
     </div>
-    <ul class="background-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div class="content">
-        <h1>The door to a better life opens soon.</h1>
-        <p>Arguably "the only self-improvement app you'll ever need". AurAchieve launches soon. Join the Discord Server to try it out now.</p>
-        <a href="https://discord.gg/XQ5U7p7bdz"><button class="button-9" role="button-9">Join Server</button></a>
+
+    <div class="content hero-section">
+        <div class="hero-badge-container">
+            <span class="hero-badge"><span class="status-dot"></span> Under Development</span>
+        </div>
+        <h1 class="hero-title">
+            Master Your Habits. <br />
+            <span class="hero-subtitle">Boost Your Aura.</span>
+        </h1>
+        
+        <p class="hero-description">
+            The only self improvement app you'll ever need. Block social media, track your habits, and plan your studies in a beautiful, privacy-focused environment.
+        </p>
+        
+        <div class="cta-buttons hero-buttons">
+            <button id="try-now-btn" class="button-primary"><i class='bx bxl-github' style="margin-right: 8px;"></i> Try now</button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdA6v4FyNCA9lzf_E-mPBP-PtF9ioedzijNrLCMPM9F_WuFgA/viewform?usp=header" target="_blank"><button class="button-secondary">Pre-register</button></a>
+        </div>
     </div>
 
     <section id="features" class="features-section">
         <h2>Features you'll love</h2>
         <div class="features-grid">
+            <div class="feature-card">
+                <i class='bx bx-id-card'></i>
+                <h3>Aura Pages</h3>
+                <p>Create your own personalized page to showcase your stats and achievements to the world.</p>
+            </div>
             <div class="feature-card">
                 <i class='bx bx-block'></i>
                 <h3>Social Media Blocker</h3>
@@ -85,9 +104,9 @@
 
     <section id="get-ready" class="get-ready-section">
         <h2>Get ready to achieve.</h2>
-        <div class="cta-buttons">
-            <a href="https://discord.gg/XQ5U7p7bdz" target="_blank"><button class="button-9" role="button-9">Join Discord</button></a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdA6v4FyNCA9lzf_E-mPBP-PtF9ioedzijNrLCMPM9F_WuFgA/viewform?usp=header"><button class="button-9" role="button-9">Pre-register</button></a>
+        <div class="cta-buttons hero-buttons">
+            <a href="https://discord.gg/XQ5U7p7bdz" target="_blank"><button class="button-primary">Join Discord</button></a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdA6v4FyNCA9lzf_E-mPBP-PtF9ioedzijNrLCMPM9F_WuFgA/viewform?usp=header"><button class="button-secondary">Pre-register</button></a>
         </div>
     </section>
 
@@ -103,6 +122,23 @@
             <a href="#">Terms of Service</a>
         </div>
     </footer>
+
+    <!-- Beta Modal -->
+    <div id="beta-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Under Development</h2>
+            <p>AurAchieve is currently in active development. Features may change and bugs may occur.</p>
+            <p>Join our Discord to stay up to date, or pre-register for the official release.</p>
+            
+            <div class="modal-actions">
+                <a href="https://discord.gg/XQ5U7p7bdz" target="_blank" class="button-primary modal-btn">Join Discord</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdA6v4FyNCA9lzf_E-mPBP-PtF9ioedzijNrLCMPM9F_WuFgA/viewform?usp=header" target="_blank" class="button-secondary modal-btn">Pre-register</a>
+            </div>
+            
+            <a href="https://github.com/nicesapien/aurachieve/releases" target="_blank" class="download-link">Download current version anyway</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
